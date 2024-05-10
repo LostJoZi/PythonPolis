@@ -6,8 +6,9 @@ Jedná se o jednoduchou textovou hru v Pythonu, která je součástí projektu R
 Pojďte si zahrát za postavu legendárního bojovníka Petra v jedinečném textovém dobrodružství! Objevujte možnosti, získavejte achievmenty, najděte tajný konec!
 
 ## Co se ve hře nachází
-Celá hra se hraje přímo v Python aplikaci ve Windowsu. V celé hře se nachází **hodně** ASCII obrázků a textů. 
-![image](https://github.com/LostJoZi/PythonPolis/assets/107387653/95a39943-115f-4d0e-8aab-18ba6be6451c)
+Celá hra se hraje přímo v Python aplikaci ve Windowsu. V celé hře se nachází ASCII obrázky a texty.. 
+![image](https://github.com/LostJoZi/PythonPolis/assets/107387653/f191f0df-cc4e-4253-af02-c920a44f9a10)
+
 
 ## Jak hrát
 Hra se hraje pomocí mačkání tlačítek na klávesnici Enter a čísel 1, 2, 3, 4,. 
