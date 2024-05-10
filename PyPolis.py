@@ -60,7 +60,6 @@ def herni_menu():
         vymazat_obrazovku()
         uvitaci_zprava()
 
-
 def show_achievements():
     vymazat_obrazovku()
     if achievements:
@@ -99,7 +98,8 @@ def rozcestnik():
     print("2. Nabrat sílu a odpočinout si")
     print("3. Vyjednat s Honzou odevzdání USB kabelu dobrovolně")
     print("4. Vyhledat pomoc u moudré čarodějnice.")
-    volba = input("Zvol možnost (1-4): ")
+    print("5. Dát to prozatím dál. Jet na nákup do Makra.")
+    volba = input("Zvol možnost (1-5): ")
     zpracuj_rozcestnik(volba)
 
 def zpracuj_rozcestnik(volba):
@@ -114,10 +114,12 @@ def zpracuj_rozcestnik(volba):
         vyhledat_lenku()
         display_achievement("Dobrodruh")
     elif volba == "5":
+        makro_pribeh()
+    elif volba == "6":
         secret_pribeh()
         display_achievement("Tajemství Polis")
     else:
-        print("Neplatná volba! Zadej číslo možnosti od 1 do 4.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                Proč jsi právě stiskl enter? Ty se snad snažíš objevit ten slavný skrytý konec? Nesmysl! Blbost! Žádný není! Teda možná je. Ale zaručeně na nej nepřijdeš. Dám ti ale nápovědu. Vzpomeň si na matematiku. Na jednu konkrétní látku. Prvočísla. Vyjmenuj si je a pozorně si prohlídni výběr osudu. Víc ti neřeknu. - I.H.")
+        print("Neplatná volba! Zadej číslo možnosti od 1 do 4.")
         input("Stiskni Enter pro návrat do rozcestníku...")
         vymazat_obrazovku()
         rozcestnik()
@@ -133,7 +135,7 @@ def secret_pribeh():
     print(" ******** //******//***** /***   //******  //** "),
     print("////////   //////  /////  ///     //////    //"),
     print("")
-    print(textwrap.fill("Nečetl jsi snad jasně? Máš zadat čísla 1, až 4! Pátý konec nebyl původně plánovaný! Víš, přemýšlel jsem nad nějakým super příběhem, ale to, co jsem vymyslel jsem sem už nestihl dát. Jedinou možnost, kterou mám je ti jen..."))
+    print(textwrap.fill("Nečetl jsi snad jasně? Máš zadat čísla 1, až 5! Upřímně. Myslím, že sis už užil dost. Nezbývá, než poděkovat."))
     input("Stiskni enter pro pokračování...")
     secret_konec()
 
@@ -169,7 +171,8 @@ def cesta_k_modre_skrine():
         vstup_do_jeskyně()
     elif volba == "2":
         print("Rozhodl jsi se jít dál bez mapy, ale bohužel jsi se ještě více ztratil v temném lese. Musíš začít znovu.")
-        return
+        input("Stiskni Enter pro ukončení hry...")
+        exit()
     else:
         print("Neplatná volba! Zkus to znovu.")
         return False  # Indikuje, že volba byla neplatná
@@ -181,6 +184,8 @@ def vstup_do_jeskyně():
 
     if volba == "1":
         print("Rozhodl jsi se spočítat nohy stonožky. Proč bys to dělal? Ty máš za úkol osvobodit kabel! Promiň, ale končíš.")
+        input("Stiskni Enter pro ukončení hry...")
+        exit()
     elif volba == "2":
         print("Rozhodl jsi se nechat stonožku být. Pokračuj v dobrodružství dál.")
         odemknout_skříň()
@@ -240,15 +245,29 @@ def vyjednat_s_honzou():
     print("Vybral sis možnost 3: Vyjednat s Honzou odevzdání USB kabelu dobrovolně.")
     print("...")
     print("Honza: Chceš vyjednávat? Přijď do mého tajného sídla.")
-    volba = input("Máš na výběr: 1 - Cesta lesem, 2 - Přes hory:")
+    volba = input("Máš na výběr: 1 - Cesta lesem, 2 - Přes hory, 3 - Jet přes přes Fugnerku (nebezpečná místa, ale zkratka):")
     if volba == "1":
         cesta_lesem()
     elif volba == "2":
         pres_hory()
         display_achievement("Průzkumník")
+    elif volba == "3":
+        nebezpecna_mista()
     else:
         print("Neplatná volba! Zkus to znovu.")
         vyjednat_s_honzou()
+
+def nebezpecna_mista():
+    vymazat_obrazovku()
+    print("Rozhodl jsi se projet přes Fugnerku.")
+    print("Cestou potkáš skupinu zvláštních figurín, které tě nuceně přesvědčují o kouzlech důchodcovského zpěvu.")
+    print("Máš na výběr: 1 - Vyslechnout si píseň a riskovat ztrátu času, 2 - Ignorovat a pokračovat dál rychleji:")
+    volba = input("Zvol možnost (1-2): ")
+    if volba == "1":
+        print("Vyslechneš si píseň. Je to tak dlouhé, že se stmívá, ale aspoň máš nové hudební zážitky. Nakonec se dostaneš k Honzovu sídlu později.")
+    elif volba == "2":
+        print("Ignoruješ a spěcháš dál. Tvůj odhodlaný postoj ti umožňuje rychlejší postup.")
+    prijit_k_honzovi()
 
 def cesta_lesem():
     vymazat_obrazovku()
@@ -277,7 +296,7 @@ def prijit_k_honzovi():
     print("Najednou uvidíš Honzovo sídlo.")
     print("Honza: Tak jsi nakonec přišel? Hodně jsem o tom přemýšlel a rozhodl jsem se, že ho s tebou za něco vyměním.")
     print("Honza: Máš ještě flashku s náhradním LabVIEW? Instaloval jsem nový PC a tu instalačku už nemám. Dáš mi ji? Na oplátku ti vrátím kabel.")
-    volba = input("Máš na výběr: 1 - Dát mu flashku z kapsy, 2 - Nedám ti ji! Stáhni si ji někde jinde:")
+    volba = input("Máš na výběr: 1 - Dát mu flashku z kapsy, 2 - Nedám ti ji! Stáhni si ji někde jinde, 3 - Nabídnout něco jiného jako výměnu: ")
     if volba == "1":
         print("Dáváš Honzovi flashku s náhradním LabVIEW.")
         print("Kabel je zachráněn. Honza následující den zemřel na instalaci LabVIEW.")
@@ -289,6 +308,11 @@ def prijit_k_honzovi():
         print("Honza: Tak to tedy nedopadlo podle mých plánů. Uvidíme se v boji!")
         input("Stiskni Enter pro ukončení hry...")
         exit()
+    elif volba == "3":
+        print("Nabídl jsi Honzovi starou kazetu s hudebními hity 80. let jako nostalgickou výměnu.")
+        print("Honza je překvapen, ale přijímá tuto netradiční nabídku a vrací ti kabel.")
+        display_achievement("Mistr vyjednávače")
+        konecna_zprava()
     else:
         print("Neplatná volba! Zkus to znovu.")
         return False
@@ -363,6 +387,8 @@ def odemknout_skříň():
 
     if volba == "1":
         print("Rozhodl jsi se nainstalovat náhradní Windows z flashky. Jako vážně sis myslel, že by Honza ve svých systémech použil Windows? Ty jsi fakt naivní. No nic, končíš.")
+        input("Stiskni Enter pro ukončení hry...")
+        exit()
     elif volba == "2":
         print("Rozhodl jsi se nainstalovat náhradní Linux z flashky. Vypadá to, že to funguje.")
         display_achievement("Šifrař")
@@ -370,6 +396,60 @@ def odemknout_skříň():
     else:
         print("Neplatná volba! Zkus to znovu.")
         return False
+
+def makro_pribeh():
+    vymazat_obrazovku()
+    print("Mám na to času dost. Jedu si nakoupit do Makra.")
+    print("Začneš si psát nákupní seznam: Maso, maso, maso, maso, maso, maso, maso, maso, maso, dietní hořčice.")
+    print("Vyrážíš do Makra:")
+    print("   ______")
+    print(" /|_||_\\`.__")
+    print("(   _    _ _\\")
+    print("=`-(_)--(_)-'")
+    time.sleep(5)
+    vymazat_obrazovku()
+    nakupni_dobrodruzstvi()
+
+def nakupni_dobrodruzstvi():
+    print("Jedeš do Makra...")
+    print("Vcházíš dovnitř, vezmeš košík a přijedeš s vozíkem k pečivu.")
+    volba = input("Dostaneš hlad. Sežereš tajně jeden rohlík? Ano (1), Ne (2): ")
+    if volba == "1":
+        print("Už sice hlad nemáš, ale všimla si tě bába v šíleně barevném letním tričku a klíčenkou TV Šlágr. (Česká verze kamerového špionážního systému)")
+        print("Začne vřískat něco o zkažené mládeži. Přijde ochranka.")
+        volba_utek = input("Máš 2 možnosti: Utéct jim, ale nákupní košík vzít sebou (1), Utéct jim, ale bez košíku (2): ")
+        if volba_utek == "1":
+            print("Jde to těžce, ale daří se ti kličkovat mezi důchodci a paletami se zbožím podprůměrné kvality.")
+            print("Nakonec se ti podaří utéct i bez placení. A dokonce máš i maso.")
+        elif volba_utek == "2":
+            print("Rychle utíkáš a unikáš ochrance, ale bez nákupu.")
+    elif volba == "2":
+        print("Vydržím to domů: Projíždíš dál supermarketem a pokračuješ k pokladnám.")
+        volba_pokladna = input("Máš na výběr: Použít pokladny s NPC lidmi (1), Použít samoobslužné pokladny (2), Utéct bez placení (3): ")
+        if volba_pokladna == "1":
+            print("Normálně zaplatíš a nakoupíš. Bylo to trochu dražší, než jsi čekal.")
+        elif volba_pokladna == "2":
+            print("Jejda, samoobslužné pokladny jsou obsazené důchodci a strašně jim to trvá.")
+        elif volba_pokladna == "3":
+            print("Utekl jsi z Makra bez placení. To dopadne špatně.")
+    konecna_faze()
+
+def konecna_faze():
+    print("Tak. Úspěšně jsi nakoupil a přežil.")
+    volba = input("Teď si vyber, co s nákupem uděláš: Uvařit baštu pro oddíl (1), uspořádat Party pro celou TULku (2), Všechno zbaštit (3): ")
+    if volba == "1":
+        print("Rozhodl jsi se jet na svou skautskou klubovnu. Uvařil jsi delikátní baštu. Dokonale jsi nakrmil skautský oddíl.")
+    elif volba == "2":
+        print("Přijel jsi odpoledne na TULku. Chystáš gigantickou párty.")
+        volba_gril = input("Zapomněl sis doma gril. Máš 2 možnosti: Stavit se pro něj domů (1), Sestrojit gril z transformátoru a LEGO Mindstorms (2): ")
+        if volba_gril == "1":
+            print("Vyzvedl sis doma svůj balkónový gril. Pokračuješ.")
+        elif volba_gril == "2":
+            print("Sestrojil jsi geniální gril. Nevíme, jak dlouho vydrží, ale funguje.")
+    elif volba == "3":
+        print("Rozhodl jsi se všechno sníst. Následující den jsi odpálil záchod.")
+        time.sleep(5)
+    konecna_zprava()
 
 def konecna_zprava():
     vymazat_obrazovku()
