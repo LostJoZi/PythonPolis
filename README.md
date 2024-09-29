@@ -1,7 +1,7 @@
 # PythonPolis
 
-Jedná se o jednoduchou textovou hru v Pythonu, která je součástí projektu Robotiky TUL.
-
+Jedná se o jednoduchou textovou hru v Pythonu, která je součástí projektu Robotiky DU TUL. <br>
+**!Pozor: Příběh hry je součástí kurzu. Každý ho nemusí pochopit. Hra není určena pro každého!**
 ## Popis
 Pojďte si zahrát za postavu legendárního bojovníka Petra v jedinečném textovém dobrodružství! Objevujte možnosti, získavejte achievmenty, najděte tajný konec!
 
